@@ -1,24 +1,25 @@
-/*var add = function(number1, number2) {
+//Business logic or backend
+var add = function(number1, number2) {
   return number1 + number2;
-};
-
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = add(number1, number2);
-alert(result);
-var sub = function(number1, number2) {
+ };
+ var subtract = function(number1, number2) {
   return number1 - number2;
-};
-
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = sub(number1, number2);
-alert(result);*/
-var mult = function(number1, number2) {
+ };
+ var multiply = function(number1, number2) {
   return number1 * number2;
-};
-
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = mult(number1, number2);
-alert(result);
+ };
+ var divide = function(number1, number2) {
+  return number1 / number2;
+ };
+ 
+ 
+//Everytrhing bellow the line is user interface
+$(document).ready(function() {
+  $("form#add").submit(function(event){
+  var number1 = parseInt($("#add1").val());
+  var number2 = parseInt($("#add2").val());
+  var results=add(number1, number2);
+  event.preventDefault();
+  $("#output").text(results)
+  });
+});
